@@ -22,12 +22,30 @@ namespace tpfinal
 			return izquierdo + derecho;
 		}
 
+
 		public String Consulta2(ArbolBinario<DecisionData> arbol)
 		{
-			return "Implementar";
+			string camino = "";
+			string lista_camino = "";
+
+			return _Consulta2(arbol, camino, lista_camino);
 		}
+		public string _Consulta2(ArbolBinario<DecisionData> _arbol, string _camino, string _lista_camino)
+		{
+			_camino += _arbol.getDatoRaiz().ToString();
 
-
+			if (_arbol.esHoja())
+			{
+				_lista_camino += _camino + "\n";
+			}
+			else
+			{
+				_lista_camino = _Consulta2(_arbol.getHijoIzquierdo(), _camino+ " → no → ", _lista_camino);
+				_lista_camino = _Consulta2(_arbol.getHijoDerecho(), _camino+ " → Si → ", _lista_camino);
+				_camino = _camino.Replace(_arbol.getDatoRaiz().ToString(),"");
+			}
+			return _lista_camino;
+		}
 
 		public String Consulta3(ArbolBinario<DecisionData> arbol)
 		{

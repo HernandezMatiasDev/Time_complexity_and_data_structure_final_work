@@ -41,3 +41,4 @@ C:\Users\mario\Desktop\Developer\C#\Complejidad Temporal\Trabajo_practico_final\
 C:\Users\mario\Desktop\Developer\C#\Complejidad Temporal\Trabajo_practico_final\TPF_WIW\obj\Debug\net6.0-windows\WiW.pdb
 C:\Users\mario\Desktop\Developer\C#\Complejidad Temporal\Trabajo_practico_final\TPF_WIW\obj\Debug\net6.0-windows\WiW.genruntimeconfig.cache
 C:\Users\mario\Desktop\Developer\C#\Complejidad Temporal\Trabajo_practico_final\TPF_WIW\obj\Debug\net6.0-windows\ref\WiW.dll
+C:\Users\mario\Desktop\Developer\C#\Complejidad Temporal\Trabajo_practico_final\TPF_WIW\obj\Debug\net6.0-windows\WiW.sourcelink.json
