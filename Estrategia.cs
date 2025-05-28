@@ -42,7 +42,6 @@ namespace tpfinal
 			{
 				_lista_camino = _Consulta2(_arbol.getHijoIzquierdo(), _camino+ " → no → ", _lista_camino);
 				_lista_camino = _Consulta2(_arbol.getHijoDerecho(), _camino+ " → Si → ", _lista_camino);
-				_camino = _camino.Replace(_arbol.getDatoRaiz().ToString(),"");
 			}
 			return _lista_camino;
 		}
