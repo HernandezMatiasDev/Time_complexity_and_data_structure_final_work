@@ -43,11 +43,44 @@ namespace tpfinal
 			return _lista_camino;
 		}
 
-		public String Consulta3(ArbolBinario<DecisionData> arbol)
+	public String Consulta3(ArbolBinario<DecisionData> arbol)
+	{
+		Cola<ArbolBinario<DecisionData>> cola = new Cola<ArbolBinario<DecisionData>>();
+		ArbolBinario<DecisionData> arbolAux;
+		string resultado = "";
+
+		List<ArbolBinario<DecisionData>> list = new List<ArbolBinario<DecisionData>>();
+		int cont = 1;
+
+		cola.encolar(arbol);
+
+		while (!cola.esVacia())
 		{
-			string result = "Implementar";
-			return result;
+			resultado += $"\n nivel {cont}: \n";
+			cont++;
+			while (!cola.esVacia())
+			{
+			arbolAux = cola.desencolar();
+
+			list.Add(arbolAux);
 		}
+
+		foreach (ArbolBinario<DecisionData> a in list)
+		{
+		resultado += a.getDatoRaiz() + " | ";
+			if (!a.esHoja())
+			{
+			cola.encolar(a.getHijoIzquierdo());
+			cola.encolar(a.getHijoDerecho());
+			}
+		}
+		list = new List<ArbolBinario<DecisionData>>();
+
+
+	}
+
+	return resultado;
+	}
 
 		public ArbolBinario<DecisionData> CrearArbol(Clasificador clasificador)
 		{
