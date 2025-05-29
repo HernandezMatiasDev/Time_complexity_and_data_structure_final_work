@@ -25,10 +25,7 @@ namespace tpfinal
 
 		public String Consulta2(ArbolBinario<DecisionData> arbol)
 		{
-			string camino = "";
-			string lista_camino = "";
-
-			return _Consulta2(arbol, camino, lista_camino);
+			return _Consulta2(arbol, "", "");
 		}
 		public string _Consulta2(ArbolBinario<DecisionData> _arbol, string _camino, string _lista_camino)
 		{
@@ -41,7 +38,7 @@ namespace tpfinal
 			else
 			{
 				_lista_camino = _Consulta2(_arbol.getHijoIzquierdo(), _camino+ " → no → ", _lista_camino);
-				_lista_camino = _Consulta2(_arbol.getHijoDerecho(), _camino+ " → Si → ", _lista_camino);
+				_lista_camino = _Consulta2(_arbol.getHijoDerecho(), _camino+ " → si → ", _lista_camino);
 			}
 			return _lista_camino;
 		}
