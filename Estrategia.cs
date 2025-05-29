@@ -19,15 +19,27 @@ namespace tpfinal
 			string izquierdo = Consulta1(arbol.getHijoIzquierdo());
 			string derecho = Consulta1(arbol.getHijoDerecho());
 
-			return izquierdo + derecho;
+			int count = 0;
+			foreach (string character in (izquierdo + derecho))
+			{
+				if (character == "%")
+				{
+					count++;
+				}
+			}
+			if (count == 0)
+			{
+				count = 1;
+			}
+			return (izquierdo + derecho).Replace("100% ", $"{100 / cont}%");
 		}
 
 
-		public String Consulta2(ArbolBinario<DecisionData> arbol)
+		public String Consulta2(ArbolBinario<DecisionData> arbol) 
 		{
-			return _Consulta2(arbol, "", "");
+			return _Consulta2(arbol, "", "").Replace("== no?", "").Replace("== si?", "").Replace("{0}? == ", "").Replace("{0} ", "").Replace(":100% ", "");
 		}
-		public string _Consulta2(ArbolBinario<DecisionData> _arbol, string _camino, string _lista_camino)
+		private string _Consulta2(ArbolBinario<DecisionData> _arbol, string _camino, string _lista_camino)
 		{
 			_camino += _arbol.getDatoRaiz().ToString();
 
@@ -37,8 +49,8 @@ namespace tpfinal
 			}
 			else
 			{
-				_lista_camino = _Consulta2(_arbol.getHijoIzquierdo(), _camino+ " → no → ", _lista_camino);
-				_lista_camino = _Consulta2(_arbol.getHijoDerecho(), _camino+ " → si → ", _lista_camino);
+				_lista_camino = _Consulta2(_arbol.getHijoIzquierdo(), _camino+ " → si → ", _lista_camino);
+				_lista_camino = _Consulta2(_arbol.getHijoDerecho(), _camino+ " → no → ", _lista_camino);
 			}
 			return _lista_camino;
 		}
@@ -46,7 +58,6 @@ namespace tpfinal
 	public String Consulta3(ArbolBinario<DecisionData> arbol)
 	{
 		Cola<ArbolBinario<DecisionData>> cola = new Cola<ArbolBinario<DecisionData>>();
-		ArbolBinario<DecisionData> arbolAux;
 		string resultado = "";
 
 		List<ArbolBinario<DecisionData>> list = new List<ArbolBinario<DecisionData>>();
@@ -60,26 +71,22 @@ namespace tpfinal
 			cont++;
 			while (!cola.esVacia())
 			{
-			arbolAux = cola.desencolar();
-
-			list.Add(arbolAux);
-		}
-
-		foreach (ArbolBinario<DecisionData> a in list)
-		{
-		resultado += a.getDatoRaiz() + " | ";
-			if (!a.esHoja())
-			{
-			cola.encolar(a.getHijoIzquierdo());
-			cola.encolar(a.getHijoDerecho());
+				list.Add(cola.desencolar());
 			}
+
+			foreach (ArbolBinario<DecisionData> a in list)
+			{
+			resultado += a.getDatoRaiz() + " | ";
+				if (!a.esHoja())
+				{
+				cola.encolar(a.getHijoIzquierdo());
+				cola.encolar(a.getHijoDerecho());
+				}
+			}
+			list = new List<ArbolBinario<DecisionData>>();
 		}
-		list = new List<ArbolBinario<DecisionData>>();
 
-
-	}
-
-	return resultado;
+	return resultado.Replace("== no?", "").Replace("== si?", "").Replace("{0}? == ", "").Replace("{0} ", "").Replace(":100% ", "");
 	}
 
 		public ArbolBinario<DecisionData> CrearArbol(Clasificador clasificador)
