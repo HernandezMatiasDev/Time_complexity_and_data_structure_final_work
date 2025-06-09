@@ -26,7 +26,7 @@ namespace tpfinal
 			datasetEntrenamiento = new ConjuntoDeDatos();
 
 			arbol = Backend.crear_arbol(datasetEntrenamiento);
-
+			arbol = ArbolBalanceado.RebalancearRecursivo(arbol);
 			init_arbol = arbol;
 
 			Random rnd = new Random();

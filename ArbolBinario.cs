@@ -8,12 +8,25 @@ namespace tp2
 		private T dato;
 		private ArbolBinario<T> hijoIzquierdo;
 		private ArbolBinario<T> hijoDerecho;
-	
+
+		private ArbolBinario<T> padre = null;
+
+		private int altura = 0;
 		
-		public ArbolBinario(T dato) {
+		public ArbolBinario(T dato)
+		{
 			this.dato = dato;
 		}
-	
+		public ArbolBinario<T> getPadre()
+		{
+			return this.padre;
+		}
+
+		public void setPadre(ArbolBinario<T> nuevoPadre)
+		{
+			this.padre = nuevoPadre;
+		}
+
 		public T getDatoRaiz() {
 			return this.dato;
 		}
@@ -25,13 +38,25 @@ namespace tp2
 		public ArbolBinario<T> getHijoDerecho() {
 			return this.hijoDerecho;
 		}
-	
-		public void agregarHijoIzquierdo(ArbolBinario<T> hijo) {
-			this.hijoIzquierdo=hijo;
+
+		public void agregarHijoIzquierdo(ArbolBinario<T> hijo)
+		{
+			this.hijoIzquierdo = hijo;
+			if (hijo != null) 
+			{
+				hijo.padre = this;
+				this.PropagarAltura();
+			}
 		}
-	
-		public void agregarHijoDerecho(ArbolBinario<T> hijo) {
-			this.hijoDerecho=hijo;
+
+		public void agregarHijoDerecho(ArbolBinario<T> hijo)
+		{
+			this.hijoDerecho = hijo;
+			if (hijo != null) 
+			{
+				hijo.padre = this;
+				this.PropagarAltura();
+			}
 		}
 	
 		public void eliminarHijoIzquierdo() {
@@ -62,7 +87,33 @@ namespace tp2
 			return 0;
 		}
 		
-		public void recorridoEntreNiveles(int n,int m) {
+        public int Altura
+        {
+            get { return altura; }
+        }
+		private int getAltura(ArbolBinario<T> nodo)
+		{
+			return nodo == null ? -1 : nodo.altura;
+		}
+
+		private void setAltura()
+		{
+			this.altura = Math.Max(getAltura(this.hijoIzquierdo), getAltura(this.hijoDerecho)) + 1;
+		}
+
+		
+		private void PropagarAltura()
+		{
+			ArbolBinario<T> nodo = this;
+			while (nodo != null)
+			{
+				nodo.setAltura();
+				nodo = nodo.padre;
+			}
+		}
+
+		public void recorridoEntreNiveles(int n, int m)
+		{
 		}
 	}
 }
