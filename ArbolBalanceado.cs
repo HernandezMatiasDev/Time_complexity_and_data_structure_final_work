@@ -45,29 +45,25 @@ namespace tpfinal
 
             int balance = FactorBalance(nodo);
 
-            // Caso izquierda-izquierda
             if (balance > 1 && FactorBalance(nodo.getHijoIzquierdo()) >= 0)
                 return RotarDerecha(nodo);
 
-            // Caso izquierda-derecha
             if (balance > 1 && FactorBalance(nodo.getHijoIzquierdo()) < 0)
             {
                 nodo.agregarHijoIzquierdo(RotarIzquierda(nodo.getHijoIzquierdo()));
                 return RotarDerecha(nodo);
             }
 
-            // Caso derecha-derecha
             if (balance < -1 && FactorBalance(nodo.getHijoDerecho()) <= 0)
                 return RotarIzquierda(nodo);
 
-            // Caso derecha-izquierda
             if (balance < -1 && FactorBalance(nodo.getHijoDerecho()) > 0)
             {
                 nodo.agregarHijoDerecho(RotarDerecha(nodo.getHijoDerecho()));
                 return RotarIzquierda(nodo);
             }
 
-            return nodo; // No requiere rotación
+            return nodo;
         }
 
         public static ArbolBinario<DecisionData> RebalancearRecursivo(ArbolBinario<DecisionData> nodo)
