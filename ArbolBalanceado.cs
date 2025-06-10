@@ -98,7 +98,6 @@ namespace tpfinal
             }
             else
             {
-                // nuevo debe ser la nueva raíz
                 nuevo.setPadre(null);
             }
         }
