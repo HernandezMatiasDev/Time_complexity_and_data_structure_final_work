@@ -1,10 +1,10 @@
 [Enunciado Final.pdf](https://github.com/user-attachments/files/20114166/Enunciado.Final.pdf)
 
-Informe:
-Nombre: Matías Hernández
-D.N.I: 45327037
-Carrera: Ingeniería en Informática
-Materia: Complejidad Temporal, Estructuras de Datos y Algoritmos
+Informe: \n
+Nombre: Matías Hernández \n
+D.N.I: 45327037 \n
+Carrera: Ingeniería en Informática \n
+Materia: Complejidad Temporal, Estructuras de Datos y Algoritmos \n
 
 
 
