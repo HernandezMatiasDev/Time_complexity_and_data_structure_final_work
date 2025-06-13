@@ -1,11 +1,11 @@
 [Enunciado Final.pdf](https://github.com/user-attachments/files/20114166/Enunciado.Final.pdf)
 
-Informe: \n
-Nombre: Matías Hernández \n
-D.N.I: 45327037 \n
-Carrera: Ingeniería en Informática \n
-Materia: Complejidad Temporal, Estructuras de Datos y Algoritmos \n
+Informe:
 
+Nombre: Matías Hernández  
+D.N.I: 45327037  
+Carrera: Ingeniería en Informática  
+Materia: Complejidad Temporal, Estructuras de Datos y Algoritmos
 
 
 El método CrearArbol: Este método construye un árbol de decisión de forma recursiva. Si el clasificador indica que se trata de una hoja, se crea un nodo hoja con la predicción. En caso contrario, se genera un nodo de decisión con la pregunta y se generan recursivamente sus hijos izquierdo y derecho.
