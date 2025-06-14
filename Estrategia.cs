@@ -49,7 +49,7 @@ namespace tpfinal
 		}
 		private string _Consulta2(ArbolBinario<DecisionData> _arbol, string _camino, string _lista_camino)
 		{
-			_camino += _arbol.getDatoRaiz().ToString() + _arbol.Altura.ToString();
+			_camino += _arbol.getDatoRaiz().ToString();
 
 			if (_arbol.esHoja())
 			{
