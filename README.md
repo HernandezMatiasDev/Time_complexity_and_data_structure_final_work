@@ -38,7 +38,7 @@ Este fue bastante sencillo, es una búsqueda por niveles normal usando una cola,
 ![image](https://github.com/user-attachments/assets/1b90c4fa-bc89-4896-b013-0b47c0e34f3f)
 
 
-UML : ![image](https://github.com/user-attachments/assets/4db9dd90-df15-4c22-88ff-2c402c995a37)
+UML : [ ![image](https://github.com/user-attachments/assets/4db9dd90-df15-4c22-88ff-2c402c995a37)](https://github.com/HernandezMatiasDev)
 
 
 Como mejora propongo mejorar la eficiencia de búsqueda, haciendo que el arbol binario este balanceado, si el arbol esta balanceado cada pregunta divide la cantidad de nodos posibles a la mitad o lo más cercano posible. De esta manera conseguimos tanto un método de búsqueda mucho más eficiente, sino que en términos del juego, esta es la estrategia que matemáticamente asegura una victoria la mayoría de veces.
