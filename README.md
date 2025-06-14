@@ -29,7 +29,7 @@ El resultado no es exacto, ya que solo muestra la parte entera, pero es mucho m�
 Consulta2 Este método recorrera el árbol desde la raíz hasta cada hoja, registrando las preguntas en el recorrido. Al llegar a una hoja, muestra ese camino junto con la predicción correspondiente.
 No supe como realizar este método sin usar parámetros, por esto use la misma técnica que antes, y cree un _consulta2 que resuelve el problema. Tambien aplique algunas modificaciones a los textos obtenidos por las preguntas para mayoer legibilidad. Este método fue el que mas me costo de los 3 ya que estuve mucho tiempo intentando resolver sin crear _consulta2 ni usar parámetros adicionales
 
-![image](https://github.com/user-attachments/assets/25564155-2134-4b4c-8e4f-3ed4dbbb262a)
+![image](https://github.com/user-attachments/assets/cdfeb39e-8f05-46fc-a6c1-3fb1a303f97c)
 
 
 Consulta3 Este método realizará un recorrido por niveles y agrupa los datos de los nodos según el nivel en el que se encuentran dentro del árbol.
